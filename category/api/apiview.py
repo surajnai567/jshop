@@ -9,6 +9,6 @@ class CategoryApiView(APIView):
 		data = CategorySerializer(cat, many=True).data
 		for da in data:
 			#
-			da['categoryImageUrl'] = "jshop-api-backend.herokuapp.com"+da['categoryImageUrl']
+			da['categoryImageUrl'] = "https://jshop-api-backend.herokuapp.com"+da['categoryImageUrl']
 		return Response(data)
 
