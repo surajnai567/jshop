@@ -29,7 +29,7 @@ MEDIA_URL = '/media/'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.43.222',]
+ALLOWED_HOSTS = ['192.168.43.222', 'jshop-api-backend.herokuapp.com']
 
 
 # Application definition
