@@ -95,11 +95,12 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['Database'], # "jshop",
-        'USER': os.environ['User'],
-        'PASSWORD': os.environ['Password'],
-        'HOST': os.environ['Host'],
-        'PORT': os.environ['Port']
+        'NAME': os.environ.get('Database'),
+        'USER': os.environ.get('User'),
+        'PASSWORD': os.environ.get('Password'),
+        'HOST': os.environ.get('Host'),
+        'PORT': os.environ.get('Port'),
+        'URI': os.environ.get('URI')
     }
 
 }
