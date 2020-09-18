@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 import category
 import product
 import subcategory
+import pricelist
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +28,6 @@ urlpatterns = [
     path('category/', include('category.urls')),
     path('subcat/', include('subcategory.urls')),
     path('order/', include('order.urls')),
+    path('price', include('pricelist.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
