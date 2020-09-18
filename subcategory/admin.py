@@ -6,4 +6,4 @@ from .models import SubCategory
 
 @admin.register(SubCategory)
 class AdminProduct(admin.ModelAdmin):
-	list_display = ['name', 'category']
+	list_display = ['name']

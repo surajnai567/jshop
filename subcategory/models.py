@@ -5,7 +5,7 @@ from category.models import Category
 
 
 class SubCategory(models.Model):
-	category = models.ForeignKey(Category, on_delete=models.CASCADE)
+	#category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	name = models.CharField(null=False, max_length=15)
 
 	def __str__(self):
