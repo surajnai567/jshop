@@ -99,8 +99,8 @@ DATABASES = {
         'USER': os.environ.get('User'),
         'PASSWORD': os.environ.get('Password'),
         'HOST': os.environ.get('Host'),
-        'PORT': os.environ.get('Port'),
-        'URI': os.environ.get('URI')
+        'PORT': os.environ.get('Port')
+
     }
 
 }
