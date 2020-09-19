@@ -1,6 +1,6 @@
 from pricelist.models import PriceList
 from subcategory.models import SubCategory
-from django.http.response import HttpResponse
+from django.http.response import JsonResponse
 
 
 def GetAllPrice(request):
@@ -8,11 +8,11 @@ def GetAllPrice(request):
 	gold = ""
 	silver = ""
 	for price in priceList:
-		subcat = SubCategory.objects.filter(id=price.subcategory).get()[0]
-		if subcat.name is 'gold':
+		subcat = SubCategory.objects.filter(id=price.subcategory.id).get()
+		if subcat.name.lower() == 'gold':
 			gold = price.amount
-		if subcat.name is 'silver':
+		if subcat.name.lower() == 'silver':
 			silver = price.amount
-	return HttpResponse({"gold": gold,
-			            "silver": silver})
+	data = {"gold": gold, "silver": silver}
+	return JsonResponse(data)
 
