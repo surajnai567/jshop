@@ -30,7 +30,21 @@ MEDIA_URL = '/media/'
 DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.43.222', 'jshop-api-backend.herokuapp.com', '127.0.0.1']
+# using cloudary
+INSTALLED_APPS = [
+    ....
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    ....
+    'cloudinary',
 
+]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('C_NAME'),
+    'API_KEY': os.environ.get('C_KEY'),
+    'API_SECRET': os.environ.get('C_SECRET'),
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Application definition
 
