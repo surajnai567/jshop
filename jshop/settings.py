@@ -50,11 +50,6 @@ INSTALLED_APPS = [
     'cloudinary',
 
 ]
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME':  os.environ.get('C_NAME'),
-    'API_KEY': os.environ.get('C_KEY'),
-    'API_SECRET': os.environ.get('C_SECRET'),
-}
 
 import cloudinary
 cloudinary.config(cloud_name=os.environ.get('C_NAME'),
