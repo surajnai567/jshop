@@ -30,4 +30,7 @@ urlpatterns = [
     path('order/', include('order.urls')),
     path('price/', include('pricelist.urls'))
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
