@@ -46,10 +46,14 @@ INSTALLED_APPS = [
     'order',
     'pricelist',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
     'cloudinary',
 
 ]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME':  os.environ.get('C_NAME'),
+    'API_KEY': os.environ.get('C_KEY'),
+    'API_SECRET': os.environ.get('C_SECRET'),
+}
 
 import cloudinary
 cloudinary.config(cloud_name=os.environ.get('C_NAME'),
@@ -106,10 +110,10 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'jshop',
-        'USER': 'postgres',
-        'PASSWORD': 'daysunmon',
-        'HOST': 'localhost',
+        'NAME':  os.environ.get('Database'),
+        'USER': os.environ.get('User'),
+        'PASSWORD':  os.environ.get('Password'),
+        'HOST':  os.environ.get('Host'),
         'PORT': 5432
 
     }
