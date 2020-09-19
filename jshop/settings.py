@@ -31,6 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.43.222', 'jshop-api-backend.herokuapp.com', '127.0.0.1']
 # using cloudary
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,35 +51,19 @@ INSTALLED_APPS = [
 
 ]
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hhua8dgho',
-    'API_KEY': '975826737947429',
-    'API_SECRET': 'kiYV5r4vneet4KA3s5GIzt0ahcA',#os.environ.get('C_SECRET'),
+    'CLOUD_NAME':  os.environ.get('C_NAME'),
+    'API_KEY': os.environ.get('C_KEY'),
+    'API_SECRET': os.environ.get('C_SECRET'),
 }
 
 import cloudinary
-
-cloudinary.config(cloud_name='hhua8dgho',
-                  api_key='975826737947429',
-                  api_secret='kiYV5r4vneet4KA3s5GIzt0ahcA')
+cloudinary.config(cloud_name=os.environ.get('C_NAME'),
+                  api_key=os.environ.get('C_KEY'),
+                  api_secret=os.environ.get('C_SECRET'))
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'product',
-    'subcategory',
-    'category',
-    'rest_framework',
-    'order',
-    'pricelist',
-]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
