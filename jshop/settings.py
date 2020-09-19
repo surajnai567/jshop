@@ -50,10 +50,17 @@ INSTALLED_APPS = [
 
 ]
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('C_NAME'),
-    'API_KEY': os.environ.get('C_KEY'),
-    'API_SECRET': os.environ.get('C_SECRET'),
+    'CLOUD_NAME': 'hhua8dgho',
+    'API_KEY': '975826737947429',
+    'API_SECRET': 'kiYV5r4vneet4KA3s5GIzt0ahcA',#os.environ.get('C_SECRET'),
 }
+
+import cloudinary
+
+cloudinary.config(cloud_name='hhua8dgho',
+                  api_key='975826737947429',
+                  api_secret='kiYV5r4vneet4KA3s5GIzt0ahcA')
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Application definition
@@ -119,11 +126,11 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('Database'),
-        'USER': os.environ.get('User'),
-        'PASSWORD': os.environ.get('Password'),
-        'HOST': os.environ.get('Host'),
-        'PORT': os.environ.get('Port')
+        'NAME': 'jshop',
+        'USER': 'postgres',
+        'PASSWORD': 'daysunmon',
+        'HOST': 'localhost',
+        'PORT': 5432
 
     }
 

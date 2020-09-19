@@ -11,7 +11,7 @@ class ProductApiView(APIView):
 		products = Product.objects.all()
 		data = ProductSerializer(products, many=True).data
 		for da in data:
-			da['imageUrl'] = "https://jshop-api-backend.herokuapp.com" + da['imageUrl']
+			da['imageUrl'] = "https://res.cloudinary.com/hhua8dgho/" + da['imageUrl']
 			sub = SubCategory.objects.filter(id=da['subCategory'])
 			weight = da['weight']
 			priceobj = PriceList.objects.filter(subcategory=da['subCategory'])[0]
@@ -30,7 +30,7 @@ class ProductApiViewCat(APIView):
 		products = Product.objects.filter(category=catid)
 		data = ProductSerializer(products, many=True).data
 		for da in data:
-			da['imageUrl'] = "https://jshop-api-backend.herokuapp.com" + da['imageUrl']
+			da['imageUrl'] = "https://res.cloudinary.com/hhua8dgho/" + da['imageUrl']
 			sub = SubCategory.objects.filter(id=da['subCategory'])
 			weight = da['weight']
 			priceobj = PriceList.objects.filter(subcategory=da['subCategory'])[0]

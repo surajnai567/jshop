@@ -3,6 +3,7 @@ from category.models import Category
 from subcategory.models import SubCategory
 from django.utils.html import mark_safe
 from pricelist.models import PriceList
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -18,12 +19,13 @@ class Product(models.Model):
 	discount = models.IntegerField(blank=True, null=True)
 	sellMRP = models.IntegerField(blank=True, null=True)
 	quantity = models.IntegerField(default=0)
-	imageUrl = models.ImageField(upload_to='product')
+	#imageUrl = models.ImageField(upload_to='product')
+	imageUrl = CloudinaryField('image')
 	orderId = models.CharField(max_length=10)
-	weight = models.DecimalField(decimal_places=2, max_digits=5)
+	weight = models.DecimalField(decimal_places=2, max_digits=8)
 
 	def image_tag(self):
-		return mark_safe('<img src="/media/%s" width="150" height="150" />' % (self.imageUrl))
+		return mark_safe('<img src="%s" width="150" height="150" />' % (self.imageUrl.url))
 
 	image_tag.short_description = 'Image'
 

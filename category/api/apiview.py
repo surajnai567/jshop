@@ -8,7 +8,6 @@ class CategoryApiView(APIView):
 		cat = Category.objects.all()
 		data = CategorySerializer(cat, many=True).data
 		for da in data:
-			#
-			da['categoryImageUrl'] = "https://jshop-api-backend.herokuapp.com"+da['categoryImageUrl']
+			da['categoryImageUrl'] = "https://res.cloudinary.com/hhua8dgho/"+da['categoryImageUrl']
 		return Response(data)
 
