@@ -32,10 +32,20 @@ DEBUG = True
 ALLOWED_HOSTS = ['192.168.43.222', 'jshop-api-backend.herokuapp.com', '127.0.0.1']
 # using cloudary
 INSTALLED_APPS = [
-    ....
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'product',
+    'subcategory',
+    'category',
+    'rest_framework',
+    'order',
+    'pricelist',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    ....
     'cloudinary',
 
 ]
